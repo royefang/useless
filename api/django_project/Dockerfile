@@ -1,15 +1,8 @@
-FROM python:3
-
+FROM python:3.10
 ENV PYTHONUNBUFFERED 1
-
-RUN mkdir /django_project
-
-WORKDIR /django_project
-
+RUN mkdir -p /app/api/django_project
+WORKDIR /app/api/django_project
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 COPY . .
-
-COPY ./requirements.txt /requirements.txt
-
-RUN pip install -r /requirements.txt
-
 EXPOSE 8000

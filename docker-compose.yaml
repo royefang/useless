@@ -2,15 +2,12 @@ services:
   api:
     restart: always
     container_name: api
-    command: bash -c "python manage.py migrate && python manage.py runserver 127.0.0.1:8000"
+    command: python manage.py runserver 0.0.0.0:8000
     build: 
       context: ./api/django_project
       dockerfile: Dockerfile
-    volumes:
-      - .:/api/django_project
     ports:
       - "8000:8000"
-    stdin_open: true
   
   frontend:
     restart: always
