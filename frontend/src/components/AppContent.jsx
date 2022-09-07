@@ -1,12 +1,12 @@
 
 import Navigation from './Navigation'
-import LandingPage from './LandingPage';
+import HomePage from './HomePage'
 
 const AppContent = () => {
     return (
         <>
-            <Navigation></Navigation>
-            <LandingPage></LandingPage>
+            <Navigation/>
+            <HomePage/>
         
         </>
     );
