@@ -24,7 +24,7 @@ def useless_fact_list(request, format=None):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PATCH', 'DELETE'])
 def useless_fact_detail(request, pk, format=None):
     """
     Retrieve, update or delete a useless fact.
@@ -38,7 +38,7 @@ def useless_fact_detail(request, pk, format=None):
         serializer = UselessFactSerializer(useless_fact)
         return Response(serializer.data)
 
-    elif request.method == 'PUT':
+    elif request.method == 'PATCH':
         serializer = UselessFactSerializer(useless_fact, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -54,7 +54,6 @@ def useless_fact_random(request, format=None):
     """
     Provides a random fact from the list
     """
-
     all_pk = UselessFact.objects.values_list('pk', flat=True)
     random_pk = choice(all_pk)
     try:
@@ -64,5 +63,3 @@ def useless_fact_random(request, format=None):
 
     serializer = UselessFactSerializer(random_useless_fact)
     return Response(serializer.data)
-
-

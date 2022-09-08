@@ -1,4 +1,3 @@
-
 import Navigation from './Navigation'
 import HomePage from './HomePage'
 

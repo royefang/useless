@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal';
 
+import SubmitForm from './SubmitForm';
+import axios from 'axios';
+
 
 const SubmitButton = () => {
 
@@ -9,6 +12,12 @@ const SubmitButton = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const onSubmit = () => {
+        
+
+    }
+
 
     return(
         <>
@@ -20,16 +29,14 @@ const SubmitButton = () => {
                 </Modal.Header>
 
                 <Modal.Body>
-                    Help me
+                    <SubmitForm/>
                 </Modal.Body>
 
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Submit
-                    </Button>
+                    
                 </Modal.Footer>
             </Modal>
         </>

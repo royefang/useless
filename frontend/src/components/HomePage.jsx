@@ -12,7 +12,7 @@ const HomePage = () => {
 
 	useEffect(() => {
 		axios
-			.get('useless-facts/2/')
+			.get('useless-facts/random/')
 			.then((res) => setUselessFact(res.data))
 			.catch((e) => console.log(e))
 	}, [])

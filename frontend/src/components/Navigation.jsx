@@ -3,14 +3,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 
-import SubmitButton from './SubmitButton';
+import OpenSubmitForm from './OpenSubmitForm';
 
 const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#home">Useless Stuff</Navbar.Brand>
-                <SubmitButton/>
+                <Navbar.Brand href="#home">Useless</Navbar.Brand>
+                <OpenSubmitForm/>
             </Container>
         </Navbar>
 
