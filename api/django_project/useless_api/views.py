@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from useless_api.models import UselessFact
 from useless_api.serializers import UselessFactSerializer
+from random import choice
 # Create your views here.
 
 @api_view(['GET', 'POST'])
@@ -47,3 +48,21 @@ def useless_fact_detail(request, pk, format=None):
     elif request.method == 'DELETE':
         useless_fact.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def useless_fact_random(request, format=None):
+    """
+    Provides a random fact from the list
+    """
+
+    all_pk = UselessFact.objects.values_list('pk', flat=True)
+    random_pk = choice(all_pk)
+    try:
+        random_useless_fact = UselessFact.objects.get(pk=random_pk)
+    except UselessFact.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    serializer = UselessFactSerializer(random_useless_fact)
+    return Response(serializer.data)
+
+

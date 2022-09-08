@@ -7,7 +7,6 @@ const AppContent = () => {
         <>
             <Navigation/>
             <HomePage/>
-        
         </>
     );
 }
