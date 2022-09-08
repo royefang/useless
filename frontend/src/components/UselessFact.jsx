@@ -1,14 +1,11 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-// import Col from 'react-bootstrap/Col'
-// import Nav from 'react-bootstrap/Nav';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect }from 'react'
+
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
 
-const HomePage = () => {
+const UselessFact = () => {
 
-	const [uselessFact, setUselessFact] = useState('')
+	const [uselessFact, setUselessFact] = useState({})
 
 	useEffect(() => {
 		axios
@@ -33,4 +30,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default UselessFact

@@ -1,11 +1,11 @@
-import Navigation from './Navigation'
-import HomePage from './HomePage'
+import Nav from './Nav'
+import UselessFact from './UselessFact'
 
 const AppContent = () => {
     return (
         <>
-            <Navigation/>
-            <HomePage/>
+            <Nav/>
+            <UselessFact/>
         </>
     );
 }

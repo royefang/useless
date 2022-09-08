@@ -1,21 +1,18 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 
-import OpenSubmitForm from './OpenSubmitForm';
+import SubmitForm from './SubmitForm';
 
-const Navigation = () => {
+const Nav = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#home">Useless</Navbar.Brand>
-                <OpenSubmitForm/>
+                <SubmitForm/>
             </Container>
         </Navbar>
-
-        
     );
 }
 
-export default Navigation;
+export default Nav;
