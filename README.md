@@ -21,3 +21,5 @@ docker compose build
 ```shell
 docker compose up
 ```
+
+You can now access the application at localhost:3000. You can access the Django interface at localhost:8000.
